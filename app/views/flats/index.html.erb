@@ -1,0 +1,9 @@
+<h1>Housing</h1>
+
+<ul>
+
+    <% @flats.each do |flat|  %>
+    <li>  <%= flat.city %>: <%= flat.capacity %> pax</li>
+    <% end %>
+
+</ul>
