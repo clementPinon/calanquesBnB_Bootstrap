@@ -3,7 +3,11 @@
 <ul>
 
     <% @flats.each do |flat|  %>
-    <li>  <%= flat.city %>: <%= flat.capacity %> pax</li>
+    <li>
+      <%= flat.city %>: <%= flat.capacity %> pax
+      <a href='<%= "/flats/#{flat.id}" %>'> details  </a>
+      <%= link_to "details", flat_path(flat) %>
+    </li>
     <% end %>
 
 </ul>
