@@ -1,2 +1,10 @@
-<h1><%= @flat.name %></h1>
+<div class="container">
+  <dic class="row center">
+    <h1><%= @flat.name %></h1>
+      <div class="center"><%= image_tag("#{@flat.city}.jpg")%></div>
+      <div>
+        <p><%= @flat.city %>: <%= @flat.capacity %> pax</p>
+      </div>
 
+  </dic>
+</div>

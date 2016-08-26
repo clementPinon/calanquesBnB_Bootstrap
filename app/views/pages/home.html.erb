@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="row text-align">
+
+
+    <div class="col-md-12 text-center">
+        <%= link_to image_tag("tokyo.jpg"), flats_path %>
+          <p>Welcome on code & calanques</p>
+          <p>Please see below the list of our flats</p>
+          <ul>
+                 <%= link_to "liste des appartements", flats_path %>
+          </ul>
+    </div>
+  </div>
+</div>

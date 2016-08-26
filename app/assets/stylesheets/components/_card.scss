@@ -1,0 +1,20 @@
+.card{
+  $size:300px;
+  height: $size;
+  width: $size;
+  border-radius:500%;
+  // background-color: beige;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+  text-align:center;
+  line-height:$size;
+  color:white;
+}
+
+.card a{
+  color:white;
+  text-shadow: 0px 5px 10px rgba(0,0,0, 0.3);
+  text-decoration: none;
+}
