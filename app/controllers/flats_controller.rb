@@ -63,7 +63,8 @@ class FlatsController < ApplicationController
   end
 
   def find_flat
-    @flat = Flat.find(params[:id])
+    #@flat = Flat.find(params[:id])
+    @flat = Flat.find_by_slug(params[:id])
   end
 
 end

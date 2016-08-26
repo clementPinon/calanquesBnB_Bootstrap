@@ -1,5 +1,5 @@
 class Flat < ApplicationRecord
-  validates :name, presence: {message: 'you should add a name'}
+  validates :name, presence: {message: 'you should add a name'}, uniqueness: true
   validates :city, presence: {message: 'you should add a city'}
   validates :slug, presence: true
 
@@ -8,7 +8,8 @@ class Flat < ApplicationRecord
 
 
   def to_param
-    return "#{self.id}-#{self.name.parameterize}"
+    #return "#{self.id}-#{self.name.parameterize}"
+    self.slug
   end
 
   def set_slug
