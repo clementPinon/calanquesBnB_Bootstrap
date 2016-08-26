@@ -10,38 +10,12 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
 
-        <div class="navbar-header">
-              <a class="navbar-brand" href="#">
-                <%= link_to image_tag("logo.svg"), root_path %>
-              </a>
-        </div>
-
-
-        <div class="navbar-right navbar-margin-top">
-          <ul class="list-inline">
-            <li><%= link_to "flats", flats_path %></li>
-
-            <li>help</li>
-
-            <li><%= link_to "account", root_path %></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <%= render :partial => "shared/navbar_top" %>
 
     <%= yield %>
 
-
-    <nav class="navbar navbar-default navbar-fixed-bottom">
-      <div class="container">
-            <div class="footer text-center footer-margin-top">
-              CalanquesBnB &copy;
-            </div>
-      </div>
-    </nav>
+    <%= render :partial => "shared/navbar_bottom" %>
 
 
   <%= javascript_include_tag 'application' %>

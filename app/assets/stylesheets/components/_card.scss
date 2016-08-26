@@ -7,13 +7,14 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin: auto;
+  margin: 15px auto 15px auto ;
   text-align:center;
   line-height:$size;
   color:white;
 }
 
-.card a{
+
+.card a, .card p, .card p:hover{
   color:white;
   text-shadow: 0px 5px 10px rgba(0,0,0, 0.3);
   text-decoration: none;

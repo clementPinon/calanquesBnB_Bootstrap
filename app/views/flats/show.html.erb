@@ -1,10 +1,14 @@
 <div class="container">
   <dic class="row center">
     <h1><%= @flat.name %></h1>
+
       <div class="center"><%= image_tag("#{@flat.city}.jpg")%></div>
-      <div>
-        <p><%= @flat.city %>: <%= @flat.capacity %> pax</p>
+      <div class="center">
+        <p>Adorable <%= @flat.name %> in <%= @flat.city %>.</p>
+        <p>Capacity: <%= @flat.capacity %> pax.</p>
       </div>
+      <%= link_to "modify", edit_flat_path, method:"GET",class:"btn btn-warning"%>
+      <%= link_to "suppress", flat_path, method:"DELETE",class:"btn btn-danger"%>
 
   </dic>
 </div>

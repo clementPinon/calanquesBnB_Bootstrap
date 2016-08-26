@@ -1,0 +1,14 @@
+    <!-- <form action="/flats" method="POST">
+      <input type="text" name="name">
+      <input type="text" name="city">
+      <input type="number" name="capacity">
+      <button type="submit">Je créer</button>
+    </form> -->
+
+    <!-- rails simple_form labels -->
+    <%= simple_form_for flat do |f| %>
+      <%= f.input :name, label: 'Name of the place', error: 'Name is mandatory, please specify one' %>
+      <%= f.input :city, label: 'Location', error: 'Location is mandatory, please specify one'%>
+      <%= f.input :capacity %>
+      <%= f.button :submit, "Continue" %>
+    <% end %>
