@@ -27,7 +27,7 @@
       <div class="dropdown">
       <%= image_tag("avatar.JPG", :class =>"avatar dropdown-toggle",  :id => "navbar-wagon-menu", :"data-toggle"=>"dropdown")%>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "flats", flats_path %></li>
+        <li><%= link_to "appartments", flats_path %></li>
         <li><%= link_to "help", root_path %></li>
         <li><%= link_to "account", root_path %></li>
         <li><%= link_to "log-out", destroy_user_session_path, method:"DELETE" %></li>
@@ -40,9 +40,10 @@
 
       <% if !user_signed_in? %>
         <ul class="list-inline">
-        <li><%= link_to "flats", flats_path %></li>
-        <li><%= link_to "help", root_path %></li>
-        <li><%= link_to "sign-up", new_user_registration_path %></li>
+        <li><%= link_to "appartments", flats_path %></li>
+        <li><%= link_to "sign-in", new_user_session_path %></li>
+        <li>or</li>
+        <li><%= link_to "sign-up", new_user_registration_path, method:"GET",class:"btn btn-primary"%></li>
         </ul>
       <%end%>
 

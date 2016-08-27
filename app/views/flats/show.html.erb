@@ -12,9 +12,11 @@
     <p>Capacity: <%= @flat.capacity %> pax.</p>
 </div>
 
-<% if user_signed_in? %>
-<div class="pull-right mb">
-  <%= link_to "modify", edit_flat_path, method:"GET",class:"btn btn-warning"%>
-  <%= link_to "suppress", flat_path, method:"DELETE",class:"btn btn-danger"%>
+  <% if user_signed_in? %>
+  <div class="pull-right mb">
+    <%= link_to "modify", edit_flat_path, method:"GET",class:"btn btn-warning"%>
+    <%= link_to "suppress", flat_path, method:"DELETE",class:"btn btn-danger"%>
+  </div>
+  <% end %>
+
 </div>
-<% end %>
