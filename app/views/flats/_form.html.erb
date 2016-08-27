@@ -8,7 +8,7 @@
     <!-- rails simple_form labels -->
     <%= simple_form_for flat do |f| %>
       <%= f.input :name, label: 'Name of the place', error: 'Name is mandatory, please specify one' %>
-      <%= f.input :city, label: 'Location', error: 'Location is mandatory, please specify one'%>
-      <%= f.input :capacity %>
+      <%= f.input :city, label: 'Location', error: 'Location is mandatory, please specify one', collection: ["Beach", "London", "Marseille", "Paris", "San-francisco","Tokyo"]%>
+      <%= f.input :capacity, collection: 1..20 %>
       <%= f.button :submit, "Continue" %>
     <% end %>

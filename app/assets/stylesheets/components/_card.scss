@@ -2,7 +2,8 @@
   $size:300px;
   height: $size;
   width: $size;
-  border-radius:500%;
+  //border-radius:500%;
+  border-radius:5px;
   // background-color: beige;
   background-size: cover;
   background-position: center;
@@ -11,6 +12,7 @@
   text-align:center;
   line-height:$size;
   color:white;
+  text-decoration: none;
 }
 
 
