@@ -2,6 +2,7 @@ class FlatsController < ApplicationController
 
 
   before_action :find_flat, only: [:show, :edit, :update, :destroy]
+
   #before_action :authenticate_user!, only: [:create, :update, :new, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
@@ -21,6 +22,7 @@ class FlatsController < ApplicationController
     #binding.pry
     @flat = Flat.new(flat_params)
     #@flat.user = we should update it later on
+    @flat.city = @flat.city.downcase
     @flat.user = current_user
     #binding.pry
     if @flat.save
@@ -44,6 +46,7 @@ class FlatsController < ApplicationController
     #binding.pry
     #@flat = Flat.find(params[:id])
     @flat.update(flat_params)
+    @flat.city = @flat.city.downcase
     #binding.pry
     if @flat.save
       redirect_to flats_path
