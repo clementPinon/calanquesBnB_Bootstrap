@@ -1,8 +1,10 @@
 class Flat < ApplicationRecord
   validates :name, presence: {message: 'you should add a name'}, uniqueness: true
   validates :city, presence: {message: 'you should add a city'}
+  validates :user, presence: {message: 'a flat should have an owner'}
   validates :slug, presence: true
 
+  belongs_to :user
 
   before_validation :set_slug
 

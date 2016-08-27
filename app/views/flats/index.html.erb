@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container padded">
 
   <div class="row">
     <% @flats.each do |flat|  %>
@@ -14,8 +14,10 @@
     <% end %>
   </div>
 
+  <% if user_signed_in? %>
   <div class="col-md-12 col-md-offset-10 mb">
       <%= link_to "Add a flat", new_flat_path, method:"GET",class:"btn btn-primary"%>
   </div>
+  <% end %>
 
 </div>

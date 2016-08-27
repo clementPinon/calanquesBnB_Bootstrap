@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  devise_for :users
   #resources :flats, only: [:show, :new,:index, :create, :edit, :update]
   resources :flats
   # get 'flats' => 'flats#index'

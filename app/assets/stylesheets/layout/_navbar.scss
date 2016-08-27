@@ -2,6 +2,11 @@
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
+  // position: absolute;
+  // left:0px;
+  // right: 0px;
+  // top: 0px;
+  // //z-index: 1000;
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
@@ -142,3 +147,4 @@
 .logo{
   height:50px;
 }
+

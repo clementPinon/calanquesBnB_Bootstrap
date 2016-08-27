@@ -2,7 +2,8 @@ class FlatsController < ApplicationController
 
 
   before_action :find_flat, only: [:show, :edit, :update, :destroy]
-
+  #before_action :authenticate_user!, only: [:create, :update, :new, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @flats = Flat.all
@@ -19,6 +20,8 @@ class FlatsController < ApplicationController
   def create
     #binding.pry
     @flat = Flat.new(flat_params)
+    #@flat.user = we should update it later on
+    @flat.user = current_user
     #binding.pry
     if @flat.save
       redirect_to flats_path
