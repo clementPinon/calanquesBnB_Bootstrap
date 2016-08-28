@@ -5,5 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   #validates :name, presence: {message: "a user needs to have a name"}
 
-  has_many :flats
+  has_many :flats, dependent: :destroy #dependency. If a user is deleted, flats are destroyed as well.
+  has_many :wishes, dependent: :destroy
+
 end

@@ -5,6 +5,7 @@ class Flat < ApplicationRecord
   validates :slug, presence: true
 
   belongs_to :user
+  has_many :wishes, dependent: :destroy
 
   before_validation :set_slug
 

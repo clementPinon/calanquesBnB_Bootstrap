@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   #resources :flats, only: [:show, :new,:index, :create, :edit, :update]
   resources :flats
   # get 'flats' => 'flats#index'
-
+  resources :wishes, only: [:create, :destroy]
   # get 'flats/new' => 'flats#new'
   #post 'flats' => 'flats#create'
 

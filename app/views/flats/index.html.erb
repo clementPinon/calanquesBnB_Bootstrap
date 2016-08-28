@@ -4,14 +4,37 @@
     <% @flats.each do |flat|  %>
 
       <div class="col-xs-12 col-sm-6 col-md-4">
-            <%= link_to flat_path(flat) do %>
-              <div class="card" style="background-image: url('<%= image_path("cities/#{flat.city}.jpg") %>')">
+          <div class="card" style="background-image: url('<%= image_path("cities/#{flat.city}.jpg") %>')">
+            <div class="card-description">
               <p><%= flat.city.capitalize%></p>
-              </div>
-            <% end %>
-      </div>
+              <!-- <i class="fa fa-heart-o card-user" aria-hidden="true"></i> -->
+            </div>
 
+            <!-- If user is connected. did he like the flat? -->
+            <% if user_signed_in? %>
+                <% wish = flat.wishes.where(user: current_user).last %>
+                <% if wish %>
+                    <%= link_to  wish_path(wish) , method: "DELETE" do%>
+                      <i class="fa fa-heart card-wish card-wished" aria-hidden="true"></i>
+                    <% end %>
+                <% else %>
+                    <%= link_to  wishes_path(flat_id: flat.id) , method: "POST" do%>
+                      <i class="fa fa-heart card-wish" aria-hidden="true"></i>
+                    <% end %>
+                <% end %>
+            <% else %>
+                <%= link_to  wishes_path(flat_id: flat.id) , method: "POST" do%>
+                  <i class="fa fa-heart card-wish" aria-hidden="true"></i>
+                <% end %>
+            <%end%>
+
+
+
+            <%= link_to  '', flat_path(flat), class: "card-link"%>
+          </div>
+        </div>
     <% end %>
+      </div>
   </div>
 
   <% if user_signed_in? %>
